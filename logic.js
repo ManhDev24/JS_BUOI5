@@ -101,7 +101,17 @@ function tinhThue(hoTen, thuNhapNam, soNguoiPhuThuoc) {
 }
 
 //bài 4
-
+/**
+ * Tính tiền cáp theo từng loại customer
+ * @param {*} id id của customer
+ * @param {*} xuLyHoaDon tiền xử lí hóa đơn
+ * @param {*} dichVu tiền dịch vụ
+ * @param {*} Kenh số lượng kênh đăng ký
+ * @param {*} soTienMoiKenh số tiền mỗi kênh tùy thuộc loại customer
+ * @param {*} ketNoi so lượng kết nốt mặc định là 0
+ * @param {*} loai loại customer
+ * @returns
+ */
 function tinhTienCap(
   id,
   xuLyHoaDon,
@@ -117,7 +127,7 @@ function tinhTienCap(
     return `Mã khách hàng:${id}, Tiền cáp ${tongTien} `;
   }
   if (loai === `company`) {
-    tongTien = xuLyHoaDon + dichVu + Kenh*soTienMoiKenh ;
+    tongTien = xuLyHoaDon + dichVu + Kenh * soTienMoiKenh;
     console.log(xuLyHoaDon);
     console.log(dichVu);
     console.log(Kenh);
