@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <section class="bai_1 my-5">
+      <div class="card w-50 mx-auto">
+        <div class="card-head bg-black text-white text-center">
+          <h2>Quản lý tuyển sinh</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-check my-3">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputScore1"
+              placeholder="Điểm chuẩn"
+            />
+          </div>
+          <div class="form-check my-3">
+            <select class="form-control form__input" name="" id="selLocation">
+              <option value="0">Chọn khu vực</option>
+              <option value="2">A</option>
+              <option value="1">B</option>
+              <option value="0.5">C</option>
+            </select>
+          </div>
+          <div class="form-check my-3">
+            <select class="form-control form__input" name="" id="selUser">
+              <option value="0">Chọn đối tượng</option>
+              <option value="2.5">1</option>
+              <option value="1.5">2</option>
+              <option value="1">3</option>
+            </select>
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputScore2"
+              placeholder="Điểm môn thứ 1"
+            />
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputScore3"
+              placeholder="Điểm môn thứ 2"
+            />
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputScore4"
+              placeholder="Điểm môn thứ 3"
+            />
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="layDiem() ">kết quả</button>
+        <div class="card-footer">
+          <div id="output" class="output"></div>
+        </div>
+      </div>
+    </section>
+    <section class="bai_2 my-5">
+      <div class="card w-50 mx-auto">
+        <div class="card-head bg-black text-white text-center">
+          <h2>Tính tiền điện</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-check my-3">
+            <input
+              type="text"
+              class="form-control form__input"
+              id="inputName"
+              placeholder="Nhập họ tên"
+            />
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputKW"
+              placeholder="Nhập số kw"
+            />
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="laySoDien() ">kết quả</button>
+        <div class="card-footer">
+          <div id="output2" class="output2"></div>
+        </div>
+      </div>
+    </section>
+    <section class="bai_3 my-5">
+      <div class="card w-50 mx-auto">
+        <div class="card-head bg-black text-white text-center">
+          <h2>Tính thuế thu nhập cá nhân</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-check my-3">
+            <input
+              type="text"
+              class="form-control form__input"
+              id="inputName2"
+              placeholder="Nhập họ tên"
+            />
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputSalary"
+              placeholder="Tổng thu nhập năm"
+            />
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputUser"
+              placeholder="Số người phụ thuộc"
+            />
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="layThue() ">kết quả</button>
+        <div class="card-footer">
+          <div id="output3" class="output3"></div>
+        </div>
+      </div>
+    </section>
+    <section class="bai_4 my-5">
+      <div class="card w-50 mx-auto">
+        <div class="card-head bg-black text-white text-center">
+          <h2>Tính tiền cáp</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-check my-3">
+            <select
+              class="form-control form__input"
+              name=""
+              id="selCustomer"
+              onchange="disableInput()"
+            >
+              <option value="">Chọn loại khách hàng</option>
+              <option value="user">Nhà Dân</option>
+              <option value="company">Doanh Nghiệp</option>
+            </select>
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="text"
+              class="form-control form__input"
+              id="inputID"
+              placeholder="Nhập mã khách hàng"
+            />
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputChanel"
+              placeholder="Số kênh cao cấp"
+            />
+          </div>
+          <div class="form-check my-3">
+            <input
+              type="number"
+              style="display: none"
+              class="form-control form__input"
+              id="inputConnect"
+              placeholder="Số kết nối"
+            />
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="layThongTinCap()">
+          kết quả
+        </button>
+        <div class="card-footer">
+          <div id="output4" class="output4"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+    <script src="./logic.js"></script>
+  </body>
+</html>
